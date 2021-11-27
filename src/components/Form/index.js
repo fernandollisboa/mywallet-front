@@ -16,17 +16,19 @@ const FormWrapper = styled.form`
   height: fit-content;
 
   & > input {
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: 400;
     margin-bottom: 10px;
     width: 100%;
-    height: 50px;
+    height: fit-content;
     border: none;
     border-radius: 5px;
-    padding: 10px 8px;
+    padding: 12px 10px;
   }
 
   & > button {
     font-size: 20px;
+    font-weight: 700;
     cursor: pointer;
     margin-top: 3px;
     color: white;

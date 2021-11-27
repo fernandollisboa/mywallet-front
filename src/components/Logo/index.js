@@ -7,7 +7,7 @@ export default function Logo() {
 const LogoWrapper = styled.div`
   align-self: center;
   color: black;
-  font-family: 'Saira Stencil One', cursive;
-  font-size: 30px;
+  font-family: 'Lobster', cursive;
+  font-size: 40px;
   padding-bottom: 20px;
 `;
