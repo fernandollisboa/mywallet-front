@@ -26,9 +26,10 @@ export default function Login() {
     } else {
       postLogin({ email, password })
         .then((res) => {
+          console.log(res.data.token);
+          localStorage.setItem('token', res.data.token);
           alertUser({ text: 'Welcome', type: 'success' });
-          console.log(res);
-          navigate('/home');
+          navigate('/app/');
         })
         .catch((err) => {
           if (err.response.status === 401)

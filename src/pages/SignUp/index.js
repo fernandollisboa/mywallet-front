@@ -19,7 +19,6 @@ export default function SignUp() {
   function sendData(e) {
     e.preventDefault();
     setIsLoading(true);
-    console.log('login');
 
     if (!email.trim() || !password.trim()) {
       alertUser({ text: 'All the fields must be completed!', type: 'error' });
@@ -30,11 +29,9 @@ export default function SignUp() {
     postSignUp({ name, email, password, repeatPassword })
       .then((res) => {
         alertUser({ text: 'Created!', type: 'sucess' });
-        console.log(res);
         navigate('/home');
       })
       .catch((err) => {
-        console.log(err);
         setIsLoading(false);
       });
   }
