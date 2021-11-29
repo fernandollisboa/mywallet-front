@@ -15,7 +15,7 @@ const FormWrapper = styled.form`
   justify-content: center;
   height: fit-content;
 
-  & > input {
+  input {
     font-size: 25px;
     font-weight: 400;
     margin-bottom: 10px;
@@ -24,6 +24,23 @@ const FormWrapper = styled.form`
     border: none;
     border-radius: 5px;
     padding: 12px 10px;
+  }
+
+  .password-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    background-color: white;
+    border-radius: 5px;
+    padding: 12px 10px;
+    margin-bottom: 10px;
+
+    input {
+      margin-bottom: 0px;
+      border-radius: 0px;
+      padding: 0px;
+    }
   }
 
   & > button {

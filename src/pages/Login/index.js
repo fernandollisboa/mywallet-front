@@ -5,6 +5,7 @@ import Logo from '../../components/Logo';
 import { PageWrapper, StyledLink } from '../../styles/shared';
 import { postLogin } from '../../services/auth';
 import { alertUser } from '../../utils/swalFire';
+import { IoEyeOffOutline, IoEyeOutline } from 'react-icons/io5';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -20,7 +21,7 @@ export default function Login() {
     setIsLoading(true);
 
     if (!email.trim() || !password.trim()) {
-      alertUser({ text: 'All the fields must be completed' });
+      alertUser({ text: 'All the fields must be completed', type: 'error' });
 
       setIsLoading(false);
     } else {
@@ -64,20 +65,26 @@ export default function Login() {
           disabled={isLoading}
           placeholder="E-mail"
         />
-        <input
-          type={passwordVisibility ? 'text' : 'password'}
-          required
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          disabled={isLoading}
-          placeholder="Password"
-        />
+
+        <div className="password-input">
+          <input
+            type={passwordVisibility ? 'text' : 'password'}
+            required
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            disabled={isLoading}
+            placeholder="Password"
+          />
+          <div onClick={togglePasswordVisibility}>
+            {passwordVisibility ? <IoEyeOutline /> : <IoEyeOffOutline />}
+          </div>
+        </div>
+
         <button type="submit" disabled={isLoading}>
           Login
         </button>
-        <button onClick={togglePasswordVisibility}>mudar visibilidade senha</button>
         <StyledLink to="/sign-up">Don't have an account? Click here!</StyledLink>
       </Form>
     </PageWrapper>

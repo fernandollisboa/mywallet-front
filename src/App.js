@@ -3,7 +3,7 @@ import GlobalStyle from './styles/GlobalStyle.js';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Home from './pages/Home';
-import ProtectedRoute from './components/ProtectedRoutes.js';
+import ProtectedRoute from './components/ProtectedRoute.js';
 
 function App() {
   return (

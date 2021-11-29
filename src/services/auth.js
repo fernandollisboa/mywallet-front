@@ -3,7 +3,7 @@ import api from './api.js';
 export async function postSignUp({ name, email, password, repeatPassword }) {
   const body = { name, email, password, repeatPassword };
 
-  return api.post('/signup', body);
+  return api.post('/sign-up', body);
 }
 
 export async function postLogin({ email, password }) {

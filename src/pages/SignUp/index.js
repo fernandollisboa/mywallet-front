@@ -28,10 +28,15 @@ export default function SignUp() {
 
     postSignUp({ name, email, password, repeatPassword })
       .then((res) => {
-        alertUser({ text: 'Created!', type: 'sucess' });
+        alertUser({ text: 'Created!', type: 'success' });
         navigate('/home');
       })
       .catch((err) => {
+        if (err.response.status === 400)
+          alertUser({ text: 'Please fill all fields correctly', type: 'error' });
+
+        if (err.response.status === 409)
+          alertUser({ text: 'E-mail already registered', type: 'error' });
         setIsLoading(false);
       });
   }
@@ -50,6 +55,7 @@ export default function SignUp() {
           disabled={isLoading}
           placeholder="Name"
         />
+
         <input
           type="email"
           required
@@ -60,6 +66,7 @@ export default function SignUp() {
           disabled={isLoading}
           placeholder="E-mail"
         />
+
         <input
           type="password"
           required
@@ -70,6 +77,7 @@ export default function SignUp() {
           disabled={isLoading}
           placeholder="Password"
         />
+
         <input
           type="password"
           required
@@ -80,6 +88,7 @@ export default function SignUp() {
           disabled={isLoading}
           placeholder="Confirm Password"
         />
+
         <button type="submit" disabled={isLoading}>
           Create Account
         </button>
