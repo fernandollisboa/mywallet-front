@@ -27,7 +27,6 @@ export default function Login() {
     } else {
       postLogin({ email, password })
         .then((res) => {
-          console.log(res.data.token);
           localStorage.setItem('username', res.data.userName);
 
           localStorage.setItem('token', res.data.token);

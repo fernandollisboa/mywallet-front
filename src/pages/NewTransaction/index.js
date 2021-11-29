@@ -14,7 +14,6 @@ export default function NewTransaction() {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { type } = useParams();
-  console.log(type);
   const token = localStorage.getItem('token');
 
   function submitTransaction(e) {

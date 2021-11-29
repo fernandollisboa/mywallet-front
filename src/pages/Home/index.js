@@ -21,7 +21,6 @@ export default function Home() {
   function fetchTransactions() {
     getUserTransactions({ token })
       .then((res) => {
-        console.log(res.data);
         setTransactions([...res.data]);
         setIsLoading(false);
       })

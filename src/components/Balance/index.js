@@ -30,6 +30,7 @@ const BalanceWrapper = styled.div`
   background-color: white;
   z-index: 1;
   bottom: 0;
+  border: 0.25px groove green;
   padding: 10px 5px 5px 5px;
   p {
     color: black;

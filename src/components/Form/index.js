@@ -59,7 +59,6 @@ const FormWrapper = styled.form`
     border-radius: 10px;
     background-color: var(--btn-color);
     opacity: ${(props) => {
-      console.log(props);
       return props.disabled ? 0.8 : 1;
     }};
     min-width: fit-content;
