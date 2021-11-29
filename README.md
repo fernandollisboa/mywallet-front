@@ -28,7 +28,7 @@ You can find its online deployment [here](your-wallet.vercel.app). With this apl
 
 ### Installation
 
-1. Clone and install the [back-end repo] (https://github.com/fernandollisboa/mywallet-back)
+1. Clone and install the [back-end repo](https://github.com/fernandollisboa/mywallet-back)
 
 2. Install NPM packages
    ```sh
