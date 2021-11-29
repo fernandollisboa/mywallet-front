@@ -10,7 +10,6 @@ const GlobalStyle = createGlobalStyle`
     body {
       background-color: var(--bg-color);
       font-family: 'Raleway', sans-serif;
-      
       width: 100%;
       max-width: 100vw;
       height: 100%;

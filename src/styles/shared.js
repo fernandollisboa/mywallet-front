@@ -20,9 +20,9 @@ export const PageWrapper = styled.div`
   }
 
   @media screen and (max-width: 800px) {
-    /* margin: 0;
-    justify-content: center; */ //TO-DO tirar isso
-    padding-top: 125px;
+    padding-top: 0;
+    justify-content: center;
+    padding-top: 0px;
   }
 `;
 
@@ -43,4 +43,14 @@ export const StyledLink = styled(Link)`
   &:active {
     text-decoration: none;
   }
+`;
+
+export const HeaderWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 5px 0px 5px;
+  width: 100%;
+  height: 12vh;
+  font-weight: 700;
+  font-size: 26px;
 `;

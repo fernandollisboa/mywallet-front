@@ -28,9 +28,11 @@ export default function Login() {
       postLogin({ email, password })
         .then((res) => {
           console.log(res.data.token);
+          localStorage.setItem('username', res.data.userName);
+
           localStorage.setItem('token', res.data.token);
           alertUser({ text: 'Welcome', type: 'success' });
-          navigate('/app/');
+          navigate('/app');
         })
         .catch((err) => {
           if (err.response.status === 401)
@@ -54,7 +56,7 @@ export default function Login() {
   return (
     <PageWrapper>
       <Logo />
-      <Form onSubmit={sendData}>
+      <Form onSubmit={sendData} disabled={isLoading}>
         <input
           type="text"
           required

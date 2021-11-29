@@ -29,7 +29,7 @@ export default function SignUp() {
     postSignUp({ name, email, password, repeatPassword })
       .then((res) => {
         alertUser({ text: 'Created!', type: 'success' });
-        navigate('/home');
+        navigate('/');
       })
       .catch((err) => {
         if (err.response.status === 400)
@@ -44,7 +44,7 @@ export default function SignUp() {
   return (
     <PageWrapper>
       <Logo />
-      <Form onSubmit={sendData}>
+      <Form onSubmit={sendData} disabled={isLoading}>
         <input
           type="name"
           required

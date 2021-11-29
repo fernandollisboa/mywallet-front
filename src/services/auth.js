@@ -1,13 +1,13 @@
-import api from './api.js';
+import Api from './api.js';
 
 export async function postSignUp({ name, email, password, repeatPassword }) {
   const body = { name, email, password, repeatPassword };
 
-  return api.post('/sign-up', body);
+  return Api.post('/sign-up', body);
 }
 
 export async function postLogin({ email, password }) {
   const body = { email, password };
 
-  return api.post('/login', body);
+  return Api.post('/login', body);
 }

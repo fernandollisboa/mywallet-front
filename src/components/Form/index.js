@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
-export default function Form({ children, onSubmit }) {
-  return <FormWrapper onSubmit={onSubmit}>{children}</FormWrapper>;
+export default function Form(props) {
+  return (
+    <FormWrapper disabled={props.disabled} onSubmit={props.onSubmit}>
+      {props.children}
+    </FormWrapper>
+  );
 }
 
 const FormWrapper = styled.form`
@@ -47,13 +51,17 @@ const FormWrapper = styled.form`
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
-    margin-top: 3px;
+    margin-top: 5px;
     color: white;
     width: 100%;
     max-width: 350px;
     height: 50px;
     border-radius: 10px;
     background-color: var(--btn-color);
+    opacity: ${(props) => {
+      console.log(props);
+      return props.disabled ? 0.8 : 1;
+    }};
     min-width: fit-content;
     text-align: center;
 
