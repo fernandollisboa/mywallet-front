@@ -28,17 +28,22 @@ You can find its online deployment [here](https://your-wallet.vercel.app/). With
 
 ### Installation
 
-1. Clone and install the [back-end repo](https://github.com/fernandollisboa/mywallet-back).
+1. Clone and install the [back-end repo](https://github.com/fernandollisboa/your-wallet-back).
 
-2. Install NPM packages
+2. Clone this repo **in a different folder**
+     ```sh
+   git clone https://github.com/fernandollisboa/your-wallet-frontend.git
+   ```
+
+3. Install NPM packages
    ```sh
    npm install
    ```
-3. Create a `.env` inside the project's root directory and fill it with your database credencials (see `.env.example`).
+4. Create a `.env` inside the project's root directory and fill it with your database credencials (see `.env.example`).
     ```
     REACT_APP_API_URL=http://localhost:3000/
     ```
-4. Run 
+5. Run 
    ```sh
    npm start
    ```
