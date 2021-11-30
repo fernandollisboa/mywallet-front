@@ -27,7 +27,7 @@ You can find its online deployment [here](https://your-wallet.vercel.app/). With
 
 ### Installation
 
-1. Clone and install the [back-end repo](https://github.com/fernandollisboa/your-wallet-back).
+1. Clone and install the [back-end repo](https://github.com/fernandollisboa/your-wallet-backend).
 
 2. Clone this repo **in a different folder**
 
