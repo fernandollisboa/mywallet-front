@@ -1,18 +1,30 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { alertUser } from '../../utils/swalFire';
+import { useNavigate } from 'react-router';
 import { getUserBalance } from '../../services/transaction';
 
 export default function Balance() {
   const [value, setValue] = useState(0);
   const token = localStorage.getItem('token');
+  const navigate = useNavigate();
 
   useEffect(() => {
     getUserBalance({ token })
       .then((res) => {
         setValue(res.data.userBalance);
       })
-      .catch((err) => console.log(err));
-  }, [token]);
+      .catch((err) => {
+        if (err.response.status === 401 || err.response.status === 400) {
+          alertUser({ text: 'Authentication Error', type: 'error' });
+          navigate('/');
+        }
+
+        if (err.response.status === 500)
+          alertUser({ text: 'Internal Server Error', type: 'error' });
+        console.log(err);
+      });
+  }, [token, navigate]);
 
   return (
     <BalanceWrapper>
@@ -30,7 +42,6 @@ const BalanceWrapper = styled.div`
   background-color: white;
   z-index: 1;
   bottom: 0;
-  border: 0.25px groove green;
   padding: 10px 5px 5px 5px;
   p {
     color: black;

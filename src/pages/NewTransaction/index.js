@@ -35,7 +35,20 @@ export default function NewTransaction() {
         alertUser({ text: `New ${type} added successfully`, type: 'success' });
         navigate('/app');
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        if (err.response.status === 401) {
+          alertUser({ text: 'Authentication Error', type: 'error' });
+          navigate('/');
+        }
+
+        if (err.response.status === 400)
+          alertUser({ text: 'Please fill all fields correctly', type: 'error' });
+
+        if (err.response.status === 500)
+          alertUser({ text: 'Internal Server Error', type: 'error' });
+        console.log(err);
+        setIsLoading(false);
+      });
   }
 
   return (
