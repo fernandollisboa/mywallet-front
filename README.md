@@ -35,18 +35,18 @@ You can find its online deployment [here](https://your-wallet.vercel.app/). With
    git clone https://github.com/fernandollisboa/your-wallet-frontend.git
    ```
 
-3. Install NPM packages
+3. Install npm packages
    ```sh
    npm install
    ```
-4. Create a `.env` inside the project's root folder and fill it with your-wallet-backend local execution information (see `.env.example`).
+4. Create a `.env` inside the project's root folder and fill it with [your-wallet-backend](https://github.com/fernandollisboa/your-wallet-backend) local execution info (see `.env.example`).
    ```
    REACT_APP_API_BASE_URL=http://localhost:4000/
    ```
 5. Start the backend local server
+   
    ```
-   ./your-wallet-backend/
-   npm start
+   ./your-wallet-backend/ npm start
    ```
 6. Start the frontend local server
    ```
